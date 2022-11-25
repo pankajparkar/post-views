@@ -2,16 +2,6 @@ import { DatePipe, JsonPipe, NgForOf, NgIf, NgStyle } from '@angular/common';
 import { Component } from '@angular/core';
 import { PostsService } from './shared/services/posts.service';
 
-const posts = [{
-  id: 1,
-  title: 'Test 1',
-  body: 'Body',
-}, {
-  id: 2,
-  title: 'Test 2',
-  body: 'Body 2',
-}]
-
 @Component({
   selector: 'pv-root',
   standalone: true,
