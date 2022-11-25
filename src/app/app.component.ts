@@ -1,5 +1,6 @@
 import { DatePipe, JsonPipe, NgForOf, NgIf, NgStyle } from '@angular/common';
 import { Component } from '@angular/core';
+import { PostsService } from './shared/services/posts.service';
 
 const posts = [{
   id: 1,
@@ -50,9 +51,24 @@ const posts = [{
 })
 export class AppComponent {
   name: string = 'World';
-  posts: any[] = posts;
+  posts: any[] = [];
   selectedPost: any;
   date = new Date();
+
+  constructor(
+    private postsService: PostsService
+  ) {
+
+  }
+
+  getPosts() {
+    this.postsService.getPosts()
+      .subscribe(posts => this.posts = posts);
+  }
+
+  ngOnInit() {
+    this.getPosts();
+  }
 
   selectPost(post: any) {
     this.selectedPost = post;
