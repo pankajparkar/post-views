@@ -5,4 +5,5 @@ import { UserListComponent } from "./user-list/user-list.component";
 export const routes: Routes = [
     { path: 'user/list', component: UserListComponent, },
     { path: 'user/edit/:id', component: UserEditComponent, },
+    { path: '**', redirectTo: '/user/list' },
 ];
