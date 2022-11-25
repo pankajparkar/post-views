@@ -1,34 +1,21 @@
 import { DatePipe, JsonPipe, NgForOf, NgIf, NgStyle } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 import { PostsService } from './shared/services/posts.service';
+import { UserEditComponent } from './user-edit/user-edit.component';
+import { UserListComponent } from './user-list/user-list.component';
 
 @Component({
   selector: 'pv-root',
   standalone: true,
   template: `
-    <div *ngIf="!selectedPost">
-      <h2>User List</h2>
-      <ul>
-        <li *ngFor="let post of posts" (click)="selectPost(post)">
-          {{ post.title }}
-        </li>
-      </ul>
+    <router-outlet></router-outlet>
+    <!-- <div *ngIf="!selectedPost">
+      <pv-user-list></pv-user-list>
     </div>
     <div *ngIf="selectedPost">
-      <h2>Post Edit</h2>
-      <form>
-        <label>
-          Id: 
-          <input type="text" readonly [value]="selectedPost.id" >
-        </label>
-        <label>
-          Name: 
-          <input type="text" [value]="selectedPost.title" >
-        </label>
-        <button type="submit">Save</button>
-        <button type="button" (click)="selectPost(undefined)">Cancel</button>
-      </form>
-    </div>
+      <pv-user-edit></pv-user-edit>
+    </div> -->
   `,
   imports: [
     NgForOf,
@@ -36,6 +23,9 @@ import { PostsService } from './shared/services/posts.service';
     DatePipe,
     JsonPipe,
     NgIf,
+    UserListComponent,
+    UserEditComponent,
+    RouterOutlet,
   ],
   styles: [],
 })
