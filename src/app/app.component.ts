@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'post-views-root',
+  selector: 'pv-root',
   template: `
     <!--The content below is only a placeholder and can be replaced.-->
     <div style="text-align:center" class="content">
