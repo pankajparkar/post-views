@@ -10,12 +10,6 @@ import { UserListComponent } from './user-list/user-list.component';
   standalone: true,
   template: `
     <router-outlet></router-outlet>
-    <!-- <div *ngIf="!selectedPost">
-      <pv-user-list></pv-user-list>
-    </div>
-    <div *ngIf="selectedPost">
-      <pv-user-edit></pv-user-edit>
-    </div> -->
   `,
   imports: [
     NgForOf,
